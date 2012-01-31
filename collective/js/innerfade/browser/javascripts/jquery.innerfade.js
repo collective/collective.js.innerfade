@@ -1,6 +1,5 @@
 /* =========================================================
 // jquery.innerFade.js
-
 // Date: 2010-07-23
 // Author: Wes Baker
 // Mail: wes@wesbaker.com	
@@ -54,7 +53,7 @@
 				$.bindControls($fade_object);
 
 				// Establish Cancel Handler
-				if ($fade_object.settings.cancelLink) { $.bindCancel($fade_object); };
+				if ($fade_object.settings.cancelLink) { $.bindCancel($fade_object); }
 
 				// Set outer container as relative, and use the height that's set and add the running class
 				$($fade_object.container).css({'position': 'relative'}).addClass($fade_object.settings.runningClass);
@@ -63,12 +62,12 @@
 					$($fade_object.container).css({'height': height + 'px'});
 				} else {
 					$($fade_object.container).css({'height': $fade_object.settings.containerHeight});
-				};
+				}
 
 				// Build the Index if one is specified
 				if ($fade_object.settings.indexContainer) {				
 					$.innerFadeIndex($fade_object);
-				};
+				}
 
 				$($fade_object.elements).filter(':gt(0)').hide(0);
 				// Set the z-index from highest to lowest (20, 19, 18...) and set their position as absolute
@@ -101,23 +100,23 @@
 					$($fade_object.elements[toShow]).show();
 					$($fade_object.elements[toHide]).hide();
 					$.updateIndexes($fade_object, toShow);
-				};
+				}
 				$.updateIndexes($fade_object, toShow);
 
 				if ($fade_object.settings.type == 'random') {
 					$($fade_object.elements[toHide]).show();
 				} else {
 					$($fade_object.elements[toShow]).show();
-				};
+				}
 
 				// Set item count containers
-				if ($fade_object.settings.currentItemContainer) { $.currentItem($fade_object, toShow); };
-				if ($fade_object.settings.totalItemsContainer) { $.totalItems($fade_object); };
+				if ($fade_object.settings.currentItemContainer) { $.currentItem($fade_object, toShow); }
+				if ($fade_object.settings.totalItemsContainer) { $.totalItems($fade_object); }
 
 				// Establish the Pause Handler
 				if ($fade_object.settings.pauseLink) {
 					$.bind_pause($fade_object);
-				};
+				}
 			}
 		});
 	};
@@ -135,7 +134,7 @@
 			$.stopSlideshow($fade_object);
 			if (slide_number != currentItemIndex) {
 				$.fadeToItem($fade_object, slide_number, currentItemIndex);
-			};
+			}
 		});
 	};
 
@@ -197,7 +196,7 @@
 				to_hide_animation.right = '-' + itemWidth + 'px';
 
 				to_show_animation.left = '0px';
-			};
+			}
 			
 			$($fade_object.elements[toHide]).css(to_hide_css);
 			$($fade_object.elements[toShow]).css(to_show_css).show();
@@ -218,12 +217,12 @@
 		// Update the toShow item
 		if ($fade_object.settings.currentItemContainer) {
 			$.currentItem($fade_object, toShow);
-		};
+		}
 		
 		// Update indexes with active classes
 		if ($fade_object.settings.indexContainer || $fade_object.settings.callback_index_update) {
 			$.updateIndexes($fade_object, toShow);
-		};
+		}
 	};
 
 	/**
@@ -237,7 +236,7 @@
 		// If its not the first run, then fade
 		if (firstRun != true) {
 			$.fadeToItem($fade_object, toShow, toHide);
-		};
+		}
 		
 		// Increment the count of slides shown
 		$fade_object.count++;
@@ -247,7 +246,7 @@
 		if ($fade_object.settings.loop == false && $fade_object.count >= $fade_object.elements.length) {
 			$.stopSlideshow($fade_object);
 			return;
-		};
+		}
 
 		// Get ready for next fade
 		if ($fade_object.settings.type == "random") {
@@ -368,7 +367,7 @@
 		// Check for the callback index update
 		if (typeof($fade_object.settings.callback_index_update) == "function") {
 			$fade_object.settings.callback_index_update.call(this, toShow);
-		};
+		}
 	};
 	
 	/**
@@ -385,7 +384,7 @@
 			$.stopSlideshow($fade_object);
 			if ($currentVisibleItem.size() <= 1 && count != currentItemIndex) {
 				$.fadeToItem($fade_object, count, currentItemIndex);
-			};
+			}
 		});
 	};
 	
@@ -400,7 +399,7 @@
 			var	$link = $('<li><a href="#">' + (i + 1) + '</a></li>');
 			$.createIndexHandler($fade_object, i, $link);
 			$indexContainer.append($link);
-		};
+		}
 	};
 	
 	/**
@@ -416,10 +415,10 @@
 			for (var i=0; i < count; i++) {
 				$('a', $indexContainer).click(function(event) {event.preventDefault();});
 				$.createIndexHandler($fade_object, i, $indexContainerChildren[i]);
-			};
+			}
 		} else {
 			alert("There is a different number of items in the menu and slides. There needs to be the same number in both.\nThere are " + $indexContainerChildren.size() + " in the indexContainer.\nThere are " + $fade_object.elements.length + " in the slides container.");
-		};		
+		}	
 	};
 	
 	/**
@@ -433,7 +432,7 @@
 			$.createIndexes($fade_object);
 		} else {
 			$.linkIndexes($fade_object);
-		};
+		}
 	};
 	
 	/**
