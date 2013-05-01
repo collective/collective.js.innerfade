@@ -12,10 +12,19 @@
     <browser:menuItem
         for="Products.ATContentTypes.interface.IATFolder"
         menu="plone_displayviews"
-        title="Innerfade view"
+        title="Innerfade view TEST"
         action="folder_innerfade_view"
         layer=".interfaces.IInnerfadeSpecific"
         description="List folder contents with jQuery Innerfade plugin"
+        />
+
+    <browser:menuItem
+        for="plone.app.collection.interfaces.ICollection"
+        menu="plone_displayviews"
+        title="Innerfade view"
+        action="folder_innerfade_view"
+        layer=".interfaces.IInnerfadeSpecific"
+        description="List collection contents with jQuery Innerfade plugin"
         />
 
     <!-- Register the installation GenericSetup extension profile -->
