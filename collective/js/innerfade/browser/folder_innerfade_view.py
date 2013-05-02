@@ -10,9 +10,8 @@ class FolderInnerfadeView(BrowserView):
 
     def getImages(self):
         if self.context.portal_type == 'Collection':
-            results =  self.context.results()
             images = []
-            for item in results:
+            for item in self.context.results():
                 if item.portal_type == 'Image':
                     images.append(item.getObject())
             return images
@@ -26,12 +25,11 @@ class FolderInnerfadeView(BrowserView):
             results = self.context.results()
             links = []
             for item in results:
-                if item.portal_type == 'Link' and item.getObject().Title() == imageId+'.link':
-                    links.append(item.getObject())
+                if item.portal_type == 'Link' and item.id == imageId+'.link':
+                    links.append(item)
         else:
             links = self.context.getFolderContents(contentFilter={'portal_type':'Link', 'id':imageId+'.link'})
 
         if links:
             result = links[0]
-
         return result

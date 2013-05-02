@@ -11,7 +11,7 @@
                     <div class="title" tal:define="link python:view.getLink(image.id)">
                         <h2 tal:content="image/Title">IMAGE TITLE</h2>
                         <a href="" tal:condition="link"
-                                   tal:attributes="href link/getRemoteUrl;
+                                   tal:attributes="
                                                    class string:innerfade-button">
                             <span tal:content="link/Title"/><img alt="" src="++resource++collective.js.innerfade.images/arrow_right_6x17.png"/>
                         </a>
@@ -27,7 +27,7 @@
     <div id="InnerfadeNavigation">
         <tal:repeat repeat="image images">
 
-            <tal:navblock tal:define="link python:view.getLink(image.id)">
+            <!-- <tal:navblock tal:define="link python:view.getLink(image.id)">
                 <a href="#" tal:condition="link"
                             tal:attributes="class string:ifnav imglink;
                                             href link/getRemoteUrl;
@@ -41,7 +41,7 @@
                     <img alt="" src="" tal:define="scale image/@@images"
                          tal:replace="structure python: scale.scale('image', width=120, height=67).tag()" />
                 </div>
-            </tal:navblock>
+            </tal:navblock> -->
         </tal:repeat>
     </div>
 </div>
