@@ -12,7 +12,7 @@
     <browser:menuItem
         for="Products.ATContentTypes.interface.IATFolder"
         menu="plone_displayviews"
-        title="Innerfade view TEST"
+        title="Innerfade view"
         action="folder_innerfade_view"
         layer=".interfaces.IInnerfadeSpecific"
         description="List folder contents with jQuery Innerfade plugin"
