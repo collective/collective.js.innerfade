@@ -11,7 +11,7 @@ Software was created and tested on Plone 4.
 Status
 ------
 
-Stable; almost used in a production environment :)
+Stable; used in several production environments
 
 Usage
 -----
