@@ -4,7 +4,7 @@
         <tal:repeat repeat="image images">
             <div class="innerfade" tal:attributes="id string:ifblock${repeat/image/index}">
                 <img alt="" src="" tal:define="scale image/@@images"
-                     tal:replace="structure python: scale.scale('image', width=480, height=271).tag()" />
+                     tal:replace="structure python: scale.scale('image', width=view.getWidth(), height=view.getHeight()).tag()" />
 
                 <div class="overlay"></div>
                 <div class="caption">
@@ -43,5 +43,12 @@
                 </div>
             </tal:navblock>
         </tal:repeat>
+
+        <input type='hidden' name='width' tal:attributes="value view/getWidth" />
+        <input type='hidden' name='height' tal:attributes="value view/getHeight" />
+        <input type='hidden' name='animationtype' tal:attributes="value view/getAnimationtype" />
+        <input type='hidden' name='speed' tal:attributes="value view/getSpeed" />
+        <input type='hidden' name='timeout' tal:attributes="value view/getTimeout" />
+        <input type='hidden' name='innerfade_type' tal:attributes="value view/getInnerfadeType" />
     </div>
 </div>

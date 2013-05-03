@@ -26,6 +26,7 @@ setup(name='collective.js.innerfade',
       install_requires=[
           'setuptools',
           'plone.app.imaging',
+          'plone.app.registry', # for adding controll panel
           # -*- Extra requirements: -*-
       ],
       entry_points="""

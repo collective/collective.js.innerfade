@@ -37,4 +37,14 @@
         permission="zope2.View"
         />
 
+    <include package="plone.app.registry" />
+
+    <!-- Control panel -->
+    <browser:page
+        name="innerfade-settings"
+        for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+        class=".controlpanel.InnerfadeSettingsControlPanel"
+        permission="cmf.ManagePortal"
+        />
+
 </configure>
