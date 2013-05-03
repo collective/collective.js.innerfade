@@ -36,4 +36,6 @@
         provides="Products.GenericSetup.interfaces.EXTENSION"
         />
 
+    <include package="plone.app.registry" />
+
 </configure>

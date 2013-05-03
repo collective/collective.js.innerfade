@@ -6,7 +6,7 @@ collective.js.innerfade installs the `jQuery innerfade plugin <http://medienfreu
 Compatibility
 -------------
 
-Software was created and tested on Plone 4.
+Software was created and tested on Plone 4.3.
 
 Status
 ------
